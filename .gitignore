@@ -1,0 +1,6 @@
+/Makefile
+src/Makefile
+/bin
+/build
+.DS_Store
+*~
