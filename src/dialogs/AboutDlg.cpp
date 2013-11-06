@@ -53,13 +53,16 @@ AboutDialog::AboutDialog(QWidget* parent):QDialog(parent)
 	str+="<br>";
 	str+="<u>Juan J Gonz&aacute;lez C&aacute;rdenas [Jota Jota]</u><br>"+tr("Developer")+"<br>myxelf@users.sf.net<br>";
 	str+="</div><br><div style='margin-left:0px;'>";
-    str+="<b>"+tr("Thanks To")+"</b><br>";
+        str+="<b>"+tr("Thanks To")+"</b><br>";
 	str+="</div><div style='margin-left:10px;'>";
-	str+="<u>Matthias Miller</u><br>"+tr("Patches for better MacOS X support")+"<br>www.outofhanwell.com<br></div>";
+	str+="<u>Matthias Miller</u><br>"+tr("Patches for better MacOS X support")+"<br>www.outofhanwell.com<br>";
 	str+="<br>";
-	str+="<u>James Nicholls</u><br>"+tr("Main Application Icon")/*+"<br>"+tr("mailto:???")*/+"<br></div>";
+	str+="<u>James Nicholls</u><br>"+tr("Main Application Icon")/*+"<br>"+tr("mailto:???")*/+"<br>";
 	str+="<br>";
-	str+="<u>Constantin Makshin</u><br>"+tr("Various fixes and improvements")+"<br>dinosaur-rus@users.sourceforge.net<br></div>";
+	str+="<u>Constantin Makshin</u><br>"+tr("Various fixes and improvements")+"<br>dinosaur-rus@users.sourceforge.net<br>";
+        str+="<br>";
+        str+="<u>Lev Shamardin</u><br>"+tr("Lock with dialogs option")+"<br>shamardin@gmail.com<br>";
+        str += "</div>";
 	Edit_Thanks->setHtml(str);
 	
 	QFile gpl(DataDir+"/license.html");

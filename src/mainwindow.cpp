@@ -1395,8 +1395,15 @@ void KeepassMainWindow::resetLock(){
 void KeepassMainWindow::OnInactivityTimer(){
 	if (IsLocked || !FileOpen)
 		return;
-	
-	if (QApplication::activeModalWidget()!=NULL || EventOccurredBlock){
+        
+        QDialog* modalWidget = (QDialog*)QApplication::activeModalWidget();
+
+        if (modalWidget != NULL && !config->lockWithDialogs()) {
+		inactivityCounter = 0;
+		return;
+	}
+          
+	if (EventOccurredBlock){
 		inactivityCounter = 0;
 		return;
 	}
@@ -1411,6 +1418,9 @@ void KeepassMainWindow::OnInactivityTimer(){
 			QWidget* popUpWidget = QApplication::activePopupWidget();
 			if (popUpWidget!=NULL)
 				popUpWidget->hide();
+                        if (modalWidget != NULL) {
+                                modalWidget->reject();
+                        }
 			OnUnLockWorkspace();
 		}
 	}

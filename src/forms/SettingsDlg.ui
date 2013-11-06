@@ -105,7 +105,7 @@ QListView::item {
      <item>
       <widget class="QStackedWidget" name="stackedWidget">
        <property name="currentIndex">
-        <number>0</number>
+        <number>4</number>
        </property>
        <widget class="QWidget" name="pageGeneral1">
         <layout class="QVBoxLayout" name="verticalLayout">
@@ -960,6 +960,13 @@ QListView::item {
           <widget class="QCheckBox" name="CheckBox_LockMinimize">
            <property name="text">
             <string>Lock workspace when minimizing the main window</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QCheckBox" name="CheckBox_LockDialogs">
+           <property name="text">
+            <string>Lock database even if there are open dialogs</string>
            </property>
           </widget>
          </item>

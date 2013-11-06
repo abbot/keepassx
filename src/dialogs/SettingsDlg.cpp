@@ -156,6 +156,7 @@ CSettingsDlg::CSettingsDlg(QWidget* parent):QDialog(parent,Qt::Dialog)
 	CheckBox_ShowPasswords_PasswordDlg->setChecked(config->showPasswordsPasswordDlg());
 	CheckBox_LockMinimize->setChecked(config->lockOnMinimize());
 	CheckBox_InactivityLock->setChecked(config->lockOnInactivity());
+        CheckBox_LockDialogs->setChecked(config->lockWithDialogs());
 	SpinBox_InacitivtyTime->setValue(config->lockAfterSec());
 	
 	//Features
@@ -287,6 +288,7 @@ void CSettingsDlg::apply(){
 	config->setShowPasswordsPasswordDlg(CheckBox_ShowPasswords_PasswordDlg->isChecked());
 	config->setLockOnMinimize(CheckBox_LockMinimize->isChecked());
 	config->setLockOnInactivity(CheckBox_InactivityLock->isChecked());
+        config->setLockWithDialogs(CheckBox_LockDialogs->isChecked());
 	config->setLockAfterSec(SpinBox_InacitivtyTime->value());
 
 	//Features
